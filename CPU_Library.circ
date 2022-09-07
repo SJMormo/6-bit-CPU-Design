@@ -754,6 +754,33 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <polyline fill="none" points="693,359 846,359" stroke="#000000" stroke-width="3"/>
+      <polyline fill="none" points="968,359 1121,359" stroke="#000000" stroke-width="3"/>
+      <polyline fill="none" points="693,362 806,591" stroke="#000000" stroke-width="3"/>
+      <polyline fill="none" points="809,590 1025,589" stroke="#000000" stroke-width="3"/>
+      <polyline fill="none" points="1122,359 1027,592" stroke="#000000" stroke-width="3"/>
+      <polyline fill="none" points="844,360 895,473" stroke="#000000" stroke-width="3"/>
+      <polyline fill="none" points="968,359 893,474" stroke="#000000" stroke-width="3"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="897" y="518">ALU</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="727" y="332">A[5:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1007" y="331">B[5:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1085" y="331">Shift[2:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="887" y="621">SF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="839" y="627">CF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="960" y="617">ZF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="707" y="482">OP</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1111" y="495">R[5:0]</text>
+      <circ-port height="8" pin="240,120" width="8" x="756" y="356"/>
+      <circ-port height="8" pin="240,180" width="8" x="1036" y="356"/>
+      <circ-port height="8" pin="180,420" width="8" x="1086" y="356"/>
+      <circ-port height="8" pin="180,530" width="8" x="746" y="476"/>
+      <circ-port height="10" pin="990,270" width="10" x="1065" y="485"/>
+      <circ-port height="10" pin="1030,350" width="10" x="885" y="585"/>
+      <circ-port height="10" pin="1030,410" width="10" x="835" y="585"/>
+      <circ-port height="10" pin="1150,510" width="10" x="955" y="585"/>
+      <circ-anchor facing="east" height="6" width="6" x="1067" y="487"/>
+    </appear>
     <wire from="(970,490)" to="(1020,490)"/>
     <wire from="(240,180)" to="(430,180)"/>
     <wire from="(980,410)" to="(1030,410)"/>
@@ -830,6 +857,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(180,530)" name="Pin">
       <a name="width" val="4"/>
       <a name="tristate" val="false"/>
+      <a name="label" val="OP"/>
     </comp>
     <comp lib="1" loc="(1070,510)" name="OR Gate">
       <a name="inputs" val="6"/>
