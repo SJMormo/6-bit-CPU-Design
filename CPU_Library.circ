@@ -1100,6 +1100,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="651" y="546">Wr[1:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="718" y="583">A[5:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="817" y="581">B[5:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="777" y="498">3 6-bit register</text>
       <circ-port height="8" pin="200,440" width="8" x="946" y="456"/>
       <circ-port height="8" pin="200,490" width="8" x="626" y="546"/>
       <circ-port height="8" pin="240,730" width="8" x="946" y="536"/>
@@ -1797,11 +1798,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="629" y="193">RD2[15:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="628" y="165">RD1[15:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="408" y="255">WE</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="start" x="407" y="245">WD</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="407" y="245">WD[14:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="408" y="165">RA1[2:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="408" y="176">RA2[2:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="407" y="206">RE2</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="start" x="407" y="232">WA</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="start" x="407" y="232">WA[2:0]</text>
       <text font-family="SansSerif" font-size="12" text-anchor="start" x="407" y="195">RE1</text>
       <polyline fill="none" points="402,261 411,270" stroke="#000000" stroke-width="2"/>
       <polyline fill="none" points="411,271 401,281" stroke="#000000" stroke-width="2"/>
@@ -3173,15 +3174,24 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(1200,530)" to="(1280,530)"/>
+    <wire from="(1330,810)" to="(1340,810)"/>
+    <wire from="(1310,810)" to="(1310,840)"/>
+    <wire from="(1340,810)" to="(1340,840)"/>
+    <wire from="(1370,810)" to="(1370,840)"/>
     <wire from="(1510,430)" to="(1600,430)"/>
     <wire from="(1510,700)" to="(1600,700)"/>
-    <wire from="(1200,530)" to="(1280,530)"/>
+    <wire from="(1280,810)" to="(1310,810)"/>
     <wire from="(1600,430)" to="(1600,700)"/>
+    <wire from="(1370,810)" to="(1400,810)"/>
+    <wire from="(1280,800)" to="(1280,810)"/>
     <wire from="(1200,530)" to="(1200,570)"/>
     <wire from="(1280,490)" to="(1280,530)"/>
+    <wire from="(1330,800)" to="(1330,810)"/>
+    <wire from="(1400,800)" to="(1400,810)"/>
     <comp loc="(360,270)" name="program_counter"/>
     <comp loc="(1510,700)" name="ALU"/>
-    <comp loc="(1320,920)" name="Flag_register"/>
+    <comp loc="(1310,900)" name="Flag_register"/>
     <comp loc="(1430,100)" name="Control Unit"/>
     <comp loc="(1280,490)" name="3 6-bit register"/>
     <comp loc="(930,240)" name="8x15 SRAM"/>
@@ -3372,5 +3382,121 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp loc="(750,390)" name="1 bit register"/>
     <comp loc="(750,540)" name="1 bit register"/>
+  </circuit>
+  <circuit name="ROM">
+    <a name="circuit" val="ROM"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="97" stroke="#000000" stroke-width="2" width="160" x="230" y="170"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="265" y="188">PC clock</text>
+      <polyline fill="none" points="230,251 239,260" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="239,259 231,267" stroke="#000000" stroke-width="2"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="254" y="261">PCE</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="351" y="194">Address[2:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="352" y="213">Data[14:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="368" y="245">WE</text>
+      <circ-port height="8" pin="450,330" width="8" x="226" y="186"/>
+      <circ-port height="8" pin="450,440" width="8" x="226" y="256"/>
+      <circ-port height="10" pin="1100,240" width="10" x="385" y="185"/>
+      <circ-port height="10" pin="1100,310" width="10" x="385" y="205"/>
+      <circ-port height="10" pin="1100,380" width="10" x="385" y="235"/>
+      <circ-port height="10" pin="1100,430" width="10" x="255" y="165"/>
+      <circ-anchor facing="east" height="6" width="6" x="387" y="187"/>
+    </appear>
+    <wire from="(820,300)" to="(840,300)"/>
+    <wire from="(730,320)" to="(730,330)"/>
+    <wire from="(450,330)" to="(670,330)"/>
+    <wire from="(820,240)" to="(1100,240)"/>
+    <wire from="(1090,310)" to="(1100,310)"/>
+    <wire from="(980,300)" to="(1070,300)"/>
+    <wire from="(670,420)" to="(830,420)"/>
+    <wire from="(780,380)" to="(1100,380)"/>
+    <wire from="(740,440)" to="(830,440)"/>
+    <wire from="(670,330)" to="(730,330)"/>
+    <wire from="(670,330)" to="(670,420)"/>
+    <wire from="(820,240)" to="(820,300)"/>
+    <wire from="(750,300)" to="(820,300)"/>
+    <wire from="(740,380)" to="(740,440)"/>
+    <wire from="(450,440)" to="(740,440)"/>
+    <wire from="(860,430)" to="(1100,430)"/>
+    <wire from="(740,380)" to="(750,380)"/>
+    <comp lib="4" loc="(750,300)" name="Counter">
+      <a name="width" val="3"/>
+      <a name="max" val="0x7"/>
+      <a name="ongoal" val="stay"/>
+    </comp>
+    <comp lib="0" loc="(1100,380)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Write Enable"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(980,300)" name="ROM">
+      <a name="addrWidth" val="3"/>
+      <a name="dataWidth" val="15"/>
+      <a name="contents">addr/data: 3 15
+a40 9b0 5621 55b0 2e30 1840 5581 41
+</a>
+    </comp>
+    <comp lib="0" loc="(1100,430)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="PC Clock"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(450,330)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Clock"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(450,440)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="PC Enable"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(780,380)" name="NOT Gate"/>
+    <comp lib="0" loc="(1100,310)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="15"/>
+      <a name="label" val="Data"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1100,240)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="3"/>
+      <a name="label" val="Physical Address"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1070,300)" name="Splitter">
+      <a name="fanout" val="1"/>
+      <a name="incoming" val="15"/>
+      <a name="appear" val="right"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="0"/>
+      <a name="bit9" val="0"/>
+      <a name="bit10" val="0"/>
+      <a name="bit11" val="0"/>
+      <a name="bit12" val="0"/>
+      <a name="bit13" val="0"/>
+      <a name="bit14" val="0"/>
+    </comp>
+    <comp lib="1" loc="(860,430)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
   </circuit>
 </project>
