@@ -785,16 +785,16 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <polyline fill="none" points="846,359 897,472" stroke="#000000" stroke-width="3"/>
       <polyline fill="none" points="968,359 893,474" stroke="#000000" stroke-width="3"/>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="897" y="518">ALU</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="727" y="332">A[5:0]</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1007" y="331">B[5:0]</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1085" y="331">Shift[2:0]</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="887" y="621">SF</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="839" y="627">CF</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="960" y="617">ZF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="761" y="384">A[5:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1016" y="385">B[5:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1075" y="387">Shift[2:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="889" y="581">SF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="836" y="578">CF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="959" y="575">ZF</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="707" y="482">OP</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1111" y="495">R[5:0]</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="1029" y="497">R[5:0]</text>
       <circ-port height="8" pin="240,120" width="8" x="756" y="356"/>
-      <circ-port height="8" pin="240,180" width="8" x="1036" y="356"/>
+      <circ-port height="8" pin="240,180" width="8" x="1016" y="356"/>
       <circ-port height="8" pin="180,420" width="8" x="1086" y="356"/>
       <circ-port height="8" pin="180,530" width="8" x="746" y="476"/>
       <circ-port height="10" pin="990,270" width="10" x="1065" y="485"/>
@@ -3173,7 +3173,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(1510,430)" to="(1600,430)"/>
+    <wire from="(1510,700)" to="(1600,700)"/>
+    <wire from="(1200,530)" to="(1280,530)"/>
+    <wire from="(1600,430)" to="(1600,700)"/>
+    <wire from="(1200,530)" to="(1200,570)"/>
+    <wire from="(1280,490)" to="(1280,530)"/>
+    <comp loc="(360,270)" name="program_counter"/>
     <comp loc="(1510,700)" name="ALU"/>
+    <comp loc="(1320,920)" name="Flag_register"/>
     <comp loc="(1430,100)" name="Control Unit"/>
     <comp loc="(1280,490)" name="3 6-bit register"/>
     <comp loc="(930,240)" name="8x15 SRAM"/>
@@ -3254,5 +3262,115 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
     <comp lib="4" loc="(840,320)" name="D Flip-Flop"/>
+  </circuit>
+  <circuit name="Flag_register">
+    <a name="circuit" val="Flag_register"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="61" stroke="#000000" stroke-width="2" width="103" x="620" y="251"/>
+      <polyline fill="none" points="620,294 630,300" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="630,301 620,309" stroke="#000000" stroke-width="2"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="641" y="265">CF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="671" y="265">SF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="700" y="265">ZF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="641" y="305">CF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="671" y="304">SF</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="701" y="303">ZF</text>
+      <circ-port height="8" pin="100,370" width="8" x="636" y="246"/>
+      <circ-port height="8" pin="100,390" width="8" x="666" y="246"/>
+      <circ-port height="8" pin="100,410" width="8" x="696" y="246"/>
+      <circ-port height="8" pin="370,700" width="8" x="616" y="296"/>
+      <circ-port height="10" pin="1100,360" width="10" x="635" y="305"/>
+      <circ-port height="10" pin="1100,380" width="10" x="665" y="305"/>
+      <circ-port height="10" pin="1100,400" width="10" x="695" y="305"/>
+      <circ-anchor facing="south" height="6" width="6" x="637" y="307"/>
+    </appear>
+    <wire from="(160,240)" to="(160,370)"/>
+    <wire from="(440,240)" to="(500,240)"/>
+    <wire from="(440,380)" to="(500,380)"/>
+    <wire from="(440,530)" to="(500,530)"/>
+    <wire from="(1040,400)" to="(1040,540)"/>
+    <wire from="(170,330)" to="(420,330)"/>
+    <wire from="(100,370)" to="(160,370)"/>
+    <wire from="(1000,380)" to="(1000,390)"/>
+    <wire from="(230,420)" to="(230,490)"/>
+    <wire from="(140,410)" to="(140,420)"/>
+    <wire from="(440,240)" to="(440,380)"/>
+    <wire from="(1040,360)" to="(1100,360)"/>
+    <wire from="(460,280)" to="(460,420)"/>
+    <wire from="(1040,400)" to="(1100,400)"/>
+    <wire from="(420,330)" to="(420,340)"/>
+    <wire from="(750,390)" to="(1000,390)"/>
+    <wire from="(440,380)" to="(440,530)"/>
+    <wire from="(460,420)" to="(460,570)"/>
+    <wire from="(380,680)" to="(380,700)"/>
+    <wire from="(1000,380)" to="(1100,380)"/>
+    <wire from="(750,250)" to="(1040,250)"/>
+    <wire from="(750,540)" to="(1040,540)"/>
+    <wire from="(100,410)" to="(140,410)"/>
+    <wire from="(460,280)" to="(500,280)"/>
+    <wire from="(460,420)" to="(500,420)"/>
+    <wire from="(460,570)" to="(500,570)"/>
+    <wire from="(1040,250)" to="(1040,360)"/>
+    <wire from="(140,420)" to="(230,420)"/>
+    <wire from="(440,530)" to="(440,640)"/>
+    <wire from="(460,570)" to="(460,680)"/>
+    <wire from="(230,200)" to="(230,240)"/>
+    <wire from="(230,640)" to="(440,640)"/>
+    <wire from="(230,200)" to="(500,200)"/>
+    <wire from="(230,490)" to="(500,490)"/>
+    <wire from="(370,700)" to="(380,700)"/>
+    <wire from="(380,680)" to="(460,680)"/>
+    <wire from="(420,340)" to="(500,340)"/>
+    <wire from="(160,240)" to="(230,240)"/>
+    <wire from="(100,390)" to="(170,390)"/>
+    <wire from="(170,330)" to="(170,390)"/>
+    <comp lib="0" loc="(1100,380)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="SF"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(100,410)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="ZF"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(230,640)" name="Power"/>
+    <comp lib="0" loc="(370,700)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Clock"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp loc="(750,250)" name="1 bit register"/>
+    <comp lib="0" loc="(100,370)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="CF"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1100,360)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="CF"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(100,390)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="SF"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1100,400)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="ZF"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp loc="(750,390)" name="1 bit register"/>
+    <comp loc="(750,540)" name="1 bit register"/>
   </circuit>
 </project>
